@@ -1,0 +1,9 @@
+.footer{
+    background-color: #24292e;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    color: #6f42c1;
+    font-size: 18px;
+    
+  }

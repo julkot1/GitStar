@@ -1,0 +1,47 @@
+.content{
+    background-color: #fafbfc;
+    width: 100%;
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+  }
+  .content h1{
+    font-size: 42px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .GitHub-link{
+    color: #171515;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  .filter-menu{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    font-size: 22px;
+  
+  }
+  .filter-menu select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    font-size: 22px;
+    padding-left: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+   
+  }
+  .filter-menu select:hover {
+    color: #d1d1d1;
+   } 
+  
+  .filter-menu select option{
+    padding: 10px;
+    color: #171515;
+    margin: 5px;
+  }
