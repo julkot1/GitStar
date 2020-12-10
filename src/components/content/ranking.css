@@ -3,3 +3,93 @@
     font-size: 18px;
     width: 50%;
   }
+:root { 
+  --time: 1.5s;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  counter-reset: pos;
+  overflow-x:hidden;
+}
+.title{
+  font-size: 25px;
+  color: #171515;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+.title::before{
+  counter-increment: pos;
+  content: counter(pos) ". ";
+  font-weight: bolder;
+}
+.title:hover{
+  text-decoration: underline;
+}
+.stars{
+  color: #febf10;
+}
+.stars::before{
+  font-family: 'fontello';
+  content: '\E800  ';
+}
+.date::before{
+  font-family: 'fontello';
+  content: '\E801  ';
+}
+.author{
+  display: flex;
+  align-items: center;
+}
+.author-name{
+  padding-left: 10px;
+}
+.des{
+  display: flex;
+  flex-wrap: wrap;
+}
+.rep{
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 8px;
+  background-color: #f6f8fa;
+  animation-iteration-count: 1;
+  animation-duration: var(--time);
+  animation-fill-mode: forwards; 
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 78px;
+}
+
+.rep:nth-child(odd){
+  animation-name: appear-r-anim;
+}
+.rep:nth-child(even){
+  animation-name: appear-l-anim;
+}
+@keyframes appear-l-anim {
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes appear-r-anim {
+  0%{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

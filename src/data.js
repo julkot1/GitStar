@@ -1,3 +1,24 @@
+
+
+  /*
+    const url = "https://api.github.com/search/repositories?q=stars:>1"+lang+"&per_page=10"
+    const response =  await fetch(url)
+    const result = await response.json()
+    result.items.forEach(item=>{
+        return{ 
+            "name": item.name, 
+            "author": item.owner.login, 
+            "author-img": item.owner.avatar_url,
+            "description": item.description,
+            "date": item.created_at.substring(0,10)
+        }
+        
+    })
+    
+
+}
+*/ 
+
 const langs=[
     {
         "name": "All",
@@ -52,5 +73,5 @@ const langs=[
         "val": "language:swift"
     } 
 ]
-export default langs
+export default langs.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
 

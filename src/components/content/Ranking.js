@@ -1,24 +1,28 @@
 import React, { useState } from 'react'
+import Repo from '././Repo'
 import './ranking.css'
-import langs from '../../data'
 
 
-const Ranking = ()=>{
-    const [loaded, setLoaded] = useState(true)
+
+const Ranking = ({repos, state})=>{
     return(
-        <div className="ranking"> 
+        <section className="ranking"> 
             {
-                loaded?<RankingList/>:<i className="icon-spin animate-spin loading"></i>
+                 !state?repos==null?
+                    <div  className="loading">There are no repositories</div>:
+                    <RankingList rep ={repos}/>
+                 :<div className="loading"><i className="icon-spin animate-spin"></i></div>
+            }
+        </section>
+    );
+}
+const RankingList = ({rep})=>{
+    return(
+        <div> 
+            {
+                rep.map(r=><Repo data={r}/>)
             }
         </div>
     );
 }
-const RankingList = ()=>{
-    return(
-        <div> 
-            jhjhjhgjhj
-        </div>
-    );
-}
-
 export default Ranking
